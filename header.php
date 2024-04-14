@@ -47,6 +47,11 @@ require 'config/config.php';
     PHP version created by: Best IT Pro
     https://best-itpro.ru
     ======================================================== -->
+
+    <!--    JavaScript API и HTTP Geocoder -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c93122ff-da8e-4332-8896-937533f3d719&lang=ru_RU" type="text/javascript">
+    </script>
+
 </head>
 
 <body>

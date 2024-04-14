@@ -1,4 +1,3 @@
-
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact section-bg">
     <div class="container" data-aos="fade-up">
@@ -46,7 +45,10 @@
         <div class="row">
 
             <div class="col-lg-6 ">
-                <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                <div id="yandex_map" style="width: 100%; height: 365px; margin-top: 0px;"></div>
+<!--                <iframe class="mb-4 mb-lg-0"-->
+<!--                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen>-->
+<!--                </iframe>-->
             </div>
 
             <div class="col-lg-6">
@@ -78,3 +80,30 @@
 
     </div>
 </section><!-- End Contact Section -->
+
+<script type="text/javascript">
+
+    function init () {
+        var myMap = new ymaps.Map('yandex_map', {
+                center: [<?= $config['latitude'] ?>, <?= $config['longitude'] ?>],
+                zoom: 12
+            }),
+
+            myPlacemark = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point",
+                    coordinates: [<?= $config['latitude'] ?>, <?= $config['longitude'] ?>]
+                },
+
+                // Data
+                properties: {
+                    hintContent: "<?= $config['title'] ?>",
+                    balloonContentHeader: "<?= $config['address'] ?>",
+                },
+            });
+        myMap.geoObjects.add(myPlacemark);
+    }
+
+    ymaps.ready(init);
+
+</script>

@@ -15,6 +15,10 @@ $config = [
     'address' => 'Aleksandr Solzhenitsyn street, Moscow, Russia',
     'open_hours' => 'Mon-Sat: 09AM - 18PM',
 
+    // Office coordinates
+    'latitude' => '55.743624',
+    'longitude' => '37.660322',
+
     'video' => 'https://www.youtube.com/watch?v=IRow0WCTrXw',
 
     // Social
